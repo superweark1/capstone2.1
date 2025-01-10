@@ -1,0 +1,174 @@
+.teacher-container {
+  font-family: 'Arial', sans-serif;
+  padding: 5px;
+  margin-left: -40px;
+  width: 1240px; /* Set a fixed width (adjust as necessary) */
+}
+.teacher-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.teacher-button-add2 button {
+  margin-top: 24px;
+  background-color: rgb(0, 170, 255);
+  color: white;
+  margin-left: -20vh;
+}
+
+.teacher-button-add2 .add-teacher:hover {
+  color: black;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Container styles */
+.teacher-list {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 700);
+  margin-top: 8vh;
+  margin-left: -21px;
+}
+
+/* Heading styles */
+.teacher-list h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+.add {
+  text-align: center;
+  margin-top: 20px;
+}
+
+label {
+  margin-left: -2vh;
+}
+.teacher-input-container{
+  height: 90vh;
+  overflow-y: auto; /* Allow scrolling for overflowing content */
+}
+
+/* Inserted code for the 'Add Teacher' section */
+.input .name,
+.input1 .surname,
+.input2 .teacher-id,
+.input3 .gender,
+.input4 .email {
+  width: 60vh;
+  margin-left: -15px;
+  height: 20px;
+  font-size: 15px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+.input5 #button {
+  background-color: blue;
+  color: white;
+  margin-top: 10px;
+  margin-left: 4vh;
+  width: 50vh;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.input5 #button:hover {
+  background-color: darkblue;
+}
+
+/* Rest of the original code */
+.teacher-pagination {
+  margin-left: 147vh;
+}
+
+/* Table styles */
+.teacher-table-responsive {
+  overflow-x: auto;
+}
+
+.teacher-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.teacher-thead-dark th {
+  background-color: #ff6600; /* Light background for header */
+  font-weight: bold; /* Bold text for header */
+}
+.teacher-table-bordered th,
+.teacher-table-bordered td {
+  padding: 4px;
+  text-align: left;
+  border: 1px solid #ddd; /* Add borders to cells */
+  overflow: hidden; /* Prevent overflow */
+  text-overflow: ellipsis; /* Show ellipsis for overflowing text */
+  white-space: nowrap; /* Prevent line breaks */
+  text-align: center; 
+}
+
+.teacher-search2 {
+  width: 28%;
+  margin: 10px 0;
+  border-radius: 4px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  margin-left: 61vh;
+  margin-top: 45px;
+}
+.select .s{
+    font-size: 16px;
+    height: 20px;
+}
+.expertise{
+  width: 46.5vh;
+  height: 30vh;
+}
+.expertise-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+.expertise-container label {
+  font-weight: bold;
+  color: #333;
+  margin-left: -10px;
+}
+
+.select-container {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  font-size: 14px;
+  color: #333;
+}
+
+.select-container option {
+  padding: 5px;
+  background-color: #fff;
+}
+
+.select-container:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+

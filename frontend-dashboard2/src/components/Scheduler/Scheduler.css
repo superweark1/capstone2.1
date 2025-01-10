@@ -1,0 +1,231 @@
+.scheduler-container1 {
+  width: 250px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 15vh;
+  margin-left: -60px;
+}
+
+.responsive-scheduler-table {
+  margin-left: 30vh;
+  margin-top: -78vh;
+  width: 950px;
+  overflow-x: auto;
+}
+
+.scheduler-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.scheduler-container label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.scheduler-container select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  background-color: #fff;
+  font-size: 16px;
+  color: #333;
+}
+
+.scheduler-container .scheduler-button {
+  display: block;
+  padding: 12px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: -1px;
+}
+
+.scheduler-container .sheduler-button:hover {
+  background-color: #45a049;
+}
+
+.scheduler-container select:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+.table {
+  width: 950px;
+  border-collapse: collapse;
+  margin-top: 5vh;
+}
+
+.thead-dark th {
+  background-color: #343c40;
+  color: white;
+}
+
+.table td, .table th {
+  padding: 8px;
+  border: 1px solid #dee2e6;
+}
+
+.table-bordered {
+  border: 1px solid #dee2e6;
+}
+
+.date-container {
+  margin-top: 20px;
+}
+
+.date-container label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #555;
+}
+
+.date-container input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 16px;
+  color: #333;
+}
+
+.group-select {
+  width: 100%;
+  height: auto;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 16px;
+  color: #333;
+}
+
+.group-select option {
+  padding: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Custom Dropdown */
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-button {
+  background-color: #00a9fecf;
+  border: 1px solid #ccc;
+  padding: 10px;
+  cursor: pointer;
+  margin-left: revert-layer;
+}
+
+.custom-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.custom-dropdown {
+  position: relative; /* For positioning dropdown-content */
+}
+
+.dropdown-button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none; /* Initially hidden */
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  padding: 5px;
+}
+
+.custom-dropdown:hover .dropdown-content {
+  display: block; /* Show dropdown content on hover */
+}
+
+.dropdown-item {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Vertically align items */
+  padding: 8px;
+  cursor: pointer;
+}
+
+.dropdown-item input[type="checkbox"] {
+  margin-right: 10px; /* Space between checkbox and text */
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1; /* Light gray background on hover */
+}
+
+
+/* Pagination */
+.pagination1 {
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination1 button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  margin: 0 5px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.pagination1 button:hover {
+  background-color: #343434;
+}
+
+.pagination1 button[disabled] {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.notifications {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.notification {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 14px;
+}
+
+

@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "json-stringify-safe": "^5.0.1",
+    "react-modal": "^3.16.1",
+    "socket.io": "^4.8.1"
+  }
+}

@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}   
+
+.body-login{
+    min-height: 100vh;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    background-size: contain;
+    background-repeat: no-repeat; /* Prevents repeating the image */
+    background-position: center;   /* Centers the image */
+}
+
+.login-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 30%;
+    height: 45vh;
+    border-radius: 30px;
+    
+    /* Adding a visible box shadow */
+    box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.5); /* Adjusted alpha for visibility */
+}
+
+
+.login-title{
+    color: #fff;
+    margin: 10px;
+}
+
+.login-input label{
+    margin-left: 50px;
+    color: #fff;
+    font-size: 18px;
+}
+.login-input input{
+    margin-left: 5px;
+    font-size: 16px;
+    width: 80%;
+    margin-left: 40px;
+    margin-top: 5px;
+    border-radius: 10px;
+    outline: none;
+    background-color: transparent;
+    border: 2px solid #fff; 
+    padding: 10px;
+    color: #fff;
+}
+
+.login-input input::placeholder {
+    color: rgba(255, 255, 255, 0.6); 
+}
+
+.password-input label{
+    margin-left: 50px;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.password-input input{
+    margin-left: 5px;
+    font-size: 16px;
+    width: 80%;
+    margin-left: 40px;
+    margin-top: 5px;
+    border-radius: 10px;
+    outline: none;
+}
+
+.forgot{
+    color: #fff;
+    margin-left: 60%;
+    cursor: pointer;
+}
+
+.forgot:hover{
+    color: yellow;
+}
+
+.button-login{
+    margin-left: 5%;
+    margin-top: 20px;
+}
+
+.button-login .login-button{
+    width: 50%;
+}

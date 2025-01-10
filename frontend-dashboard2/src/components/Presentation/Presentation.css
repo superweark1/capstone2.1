@@ -1,0 +1,277 @@
+.presentation-container {
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+
+  
+}
+.present{
+  background-color: #fff;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.658);
+   height: 50vh;
+   overflow-x: auto;
+   width: 170vh;
+   margin-left: -40px;
+}
+
+.Presentationtable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 5vh;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  color: #333; /* Darker text for better readability */
+}
+
+.Presentationtable th, 
+.Presentationtable td {
+  padding: 12px 15px; /* Add spacing for a clean look */
+  border: 1px solid #ddd; /* Subtle border between cells */
+  text-align: left; /* Align text for better readability */
+  width: 140vh;
+}
+
+.Presentationtable th {
+  background-color: #666666; /* Light background for headers */
+  font-weight: bold; /* Emphasize headers */
+  text-transform: uppercase; /* Capitalize header text for a professional look */
+  letter-spacing: 0.05em; /* Slight spacing for a clean look */
+}
+
+.Presentationtable tr:nth-child(even) {
+  background-color: #f9f9f9; /* Alternate row colors for readability */
+}
+
+.Presentationtable tr:hover {
+  background-color: #f1f1f1; /* Highlight row on hover for better UX */
+}
+
+.Presentationtable td {
+  width: auto; /* Adjust width automatically based on content */
+  vertical-align: middle; /* Align content in the middle vertically */
+}
+
+.timer {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 25vh;
+  margin-top: -5vh;
+  margin-left: 60vh;
+  width: 80vh;
+
+  /* Centering content */
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+}
+
+
+.timer .timer-section{
+  margin: 10px;
+}
+
+.timer-section h2{
+  text-align: center;
+  margin-top: -10px;
+}
+.timer-section label{
+  padding: 10px;
+  margin-left: -1vh;
+}
+.timer-section input{
+  margin-top: -20px;
+}
+.timer-section button{
+  margin-left: 10px;
+  
+}
+
+.timer-flex{
+  display: flex;
+}
+
+.border {
+  background-color: white;
+  border: 2px solid black; /* Adjust the width (2px), style (solid), and color (white) as needed */
+  margin-top: 20px;
+  height: 35px;
+  border-radius:30px ;
+}
+
+.border #timer{
+  margin-top: 5px;
+  
+}
+
+
+.timer-section span{
+  text-align: center;
+   margin-top: 30vh;
+}
+
+
+.input2{
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 40vh;
+  margin-left: 122vh;
+  margin-top: -93vh;
+
+}
+
+.input2 .grading-section{
+  margin: 10px;
+  padding: 10px;
+  margin-top: 7vh;
+}
+
+.grading-section h2{
+  text-align: center;
+}
+
+.grading-section label {
+  padding: 10px;
+  margin-left: -5px;
+  
+}
+
+.grading-section label input{
+  margin-top: -30px;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+.input-section, .timer-section, .grading-section {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: calc(100% - 20px);
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px;
+  margin-right: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-left: 95px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#timer {
+  font-size: 24px;
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+.final-grade {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.final-grade h2 {
+  color: green;
+}
+
+.calendar-section{
+  margin-top: -25vh;
+}
+.react-calendar {
+  width: 100%;
+  border: 1px solid #151414;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-left: 50px;
+}
+
+.react-calendar__month-view__days__day {
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #ccc;
+}
+
+.react-calendar__tile--now {
+  background: #007bff;
+  color: white;
+  border-radius: 50%;
+}
+
+.react-calendar__tile--active {
+  background: #289ca7;
+  color: white;
+  border-radius: 50%;
+}
+
+.react-calendar__tile:hover {
+  background-color: #f0f0f0;
+  border-radius: 50%;
+}
+.react-calendar__navigation button {
+  min-width: 44px;
+  background: none;
+  color: #000000;
+}
+.warning-message {
+  color: #ff0000;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+/* Presentation.css */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.modal-content button {
+  margin: 10px;
+}
+.Gradebuttons{
+  margin-left: 147vh;
+  width: 15vh;
+  margin-top: 10px;
+}
+

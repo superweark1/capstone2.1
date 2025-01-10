@@ -1,0 +1,13 @@
+.ScheduleStudentDashboard-home-side-container{
+    display: flex;
+  
+  }
+  
+  .navbar-ScheduleStudentDashboard{
+    margin-top: -41px;
+  }
+  
+  .ScheduleStudentDashboard-home-content{
+    margin-left: 42vh;
+    margin-top: 80px;
+  }

@@ -1,0 +1,16 @@
+.registeradduser-sidebar{
+    display: flex;
+    margin-top: -22px;
+}
+
+
+.registeradduser-navbar{
+    margin-top: -21px;
+    margin-left: -250px;
+}
+
+.registeradduser-content{
+    margin-left: 10vh;
+    margin-top: 25vh;
+    width: 166vh;
+}

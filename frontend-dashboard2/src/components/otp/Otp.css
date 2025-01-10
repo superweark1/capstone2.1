@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}   
+
+.body-otp{
+    min-height: 100vh;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    background-size: contain;
+    background-repeat: no-repeat; 
+    background-position: center;   /* Centers the image */
+}
+
+.otpcontainer-home{
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 30%;
+    height: 45vh;
+    border-radius: 30px;
+    
+    /* Adding a visible box shadow */
+    box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.5); /* Adjusted alpha for visibility */
+}
+.otp-container {
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px; /* Adjust the margin as needed */
+    
+}
+
+.otp-input {
+    display: flex;
+    gap: 10px; /* Space between input fields */
+    justify-content: center;
+    margin-top: -50px;
+}
+
+.otp-input input {
+    width: 50px; /* Width of each input field */
+    height: 50px; /* Height of each input field */
+    text-align: center; /* Center the text */
+    font-size: 24px; /* Font size */
+    border: 2px solid #ccc; /* Border styling */
+    border-radius: 5px; /* Rounded corners */
+    outline: none; /* Remove default outline */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+    margin-top: 70px;
+    
+}
+
+.otp-input input:focus {
+    border-color: #4a90e2; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5); /* Add shadow on focus */
+}
+
+.otp-input input:disabled {
+    background-color: #f0f0f0; /* Light background for disabled input */
+    cursor: not-allowed; /* Change cursor for disabled input */
+}
+
+.otp-title{
+    margin-top: -20px;
+    color: #fff;
+}
+.message-otp{
+    color: #fff;
+    
+}
+.message-otp .otp-send{
+    margin-left: 50px;
+    font-size: 15px;
+}
+
+.message-otp .send-email{
+    margin-left: 21.5vh;
+    font-size: 15px;
+    margin-top: -18px;
+    color: yellow;
+}
+
+.otp-button{
+    margin-left: -10px;
+    margin-top: 20px;
+}
+
+.otp-button button{
+    width: 40vh;
+}
+
+.otp-timer .timer-otp{
+    color: #fff;
+    margin-top: 15px;
+    margin-left: 20vh;
+}
+
+.otp-timer button{
+    margin-top: 15px;
+    margin-left: 25vh;
+}
+
+.otp-message{
+    margin-left: 14vh;
+    color: rgb(227, 122, 122);
+    margin-top: 10px;
+}

@@ -1,0 +1,130 @@
+.registeruser-container{
+    background: #fff;
+    width: 90vh;
+    height: 65vh;
+    margin-left: 70vh;
+    margin-top: 20vh;
+    border-radius: 30px;
+    box-shadow: 
+    0px 2px 4px rgba(0, 0, 0, 0.2),   /* Light shadow close to the element */
+    0px 5px 10px rgba(0, 0, 0, 0.15),  /* Slightly deeper shadow */
+    0px 10px 20px rgba(0, 0, 0, 0.1),   /* Medium shadow for more depth */
+    0px 15px 30px rgba(0, 0, 0, 0.07),  /* Stronger shadow */
+    0px 20px 40px rgba(0, 0, 0, 0.05),  /* Deeper shadow for added dimension */
+    0px 25px 50px rgba(0, 0, 0, 0.03),  /* Additional depth */
+    0px 30px 60px rgba(0, 0, 0, 0.02),  /* Farthest shadow for the 10D effect */
+    0px 35px 70px rgba(0, 0, 0, 0.015), /* Softest shadow for the farthest depth */
+    0px 40px 80px rgba(0, 0, 0, 0.01);   /* Faint shadow for extreme depth */
+}
+.regitserUser-information {
+    height: 100%; /* Full height of the parent container */
+    padding-top: 20px; /* Optional padding from the bottom */
+    margin: 0; /* Reset default margin */
+}
+
+.regitserUser-information input{
+    width: 40vh;
+    height: 40px;
+    margin-left: 20px;
+    font-size: 16px;
+    outline: none;
+    border-radius: 10px;
+    background: transparent;
+    border: 2px solid black; /* Yellow border */
+    box-shadow: 
+        0 2px 5px rgba(0, 0, 0, 0.2),   /* Light shadow */
+        0 5px 10px rgba(0, 0, 0, 0.15),  /* Medium shadow */
+        0 10px 20px rgba(0, 0, 0, 0.1),   /* Strong shadow */
+        0 15px 30px rgba(0, 0, 0, 0.05),  /* Deeper shadow for more depth */
+        0 20px 40px rgba(0, 0, 0, 0.025); /* Farthest shadow for the 5D effect */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Optional: Change the shadow on focus for better visibility */
+.regitserUser-information input:focus {
+    box-shadow: 
+        0 2px 10px rgba(0, 0, 0, 0.3), /* Enhanced shadow on focus */
+        0 8px 20px rgba(0, 0, 0, 0.2),  /* Stronger shadow for focus effect */
+        0 12px 30px rgba(0, 0, 0, 0.15); /* Additional depth on focus */
+}
+
+.regitserUser-information select{
+    width: 40vh;
+    height: 40px;
+    margin-left: 20px;
+    font-size: 16px;
+    padding: 5px;
+    outline: none;
+    border-radius: 10px;
+    background: transparent;
+    border: 2px solid black; /* Yellow border */
+    box-shadow: 
+        0 2px 5px rgba(0, 0, 0, 0.2),   /* Light shadow */
+        0 5px 10px rgba(0, 0, 0, 0.15),  /* Medium shadow */
+        0 10px 20px rgba(0, 0, 0, 0.1),   /* Strong shadow */
+        0 15px 30px rgba(0, 0, 0, 0.05),  /* Deeper shadow for more depth */
+        0 20px 40px rgba(0, 0, 0, 0.025); /* Farthest shadow for the 5D effect */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Optional: Change the shadow on focus for better visibility */
+.regitserUser-information select:focus {
+    box-shadow: 
+        0 2px 10px rgba(0, 0, 0, 0.3), /* Enhanced shadow on focus */
+        0 8px 20px rgba(0, 0, 0, 0.2),  /* Stronger shadow for focus effect */
+        0 12px 30px rgba(0, 0, 0, 0.15); /* Additional depth on focus */
+}
+
+
+.regitserUser-information label{
+    margin-left: 30px;
+    font-size: 17px;
+    color: black;
+}
+
+.firstname-lastname,.gender-birthdate,.email-role,.password-cpasswod{
+    display: flex;
+}
+
+.registerUser-button{
+    margin-left: 2vh;
+    margin-top: 15px;
+    display: flex;
+}
+
+.registerUser-button .sbutton{
+    width: 40vh;
+    font-size: 18px;
+    border-radius: 10px;
+    box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.1),   /* Light shadow for subtle depth */
+    0 4px 8px rgba(0, 0, 0, 0.15),  /* Slightly deeper shadow */
+    0 6px 12px rgba(0, 0, 0, 0.2),   /* Medium shadow for more definition */
+    0 8px 16px rgba(0, 0, 0, 0.25),  /* Deeper shadow for enhanced depth */
+    0 12px 24px rgba(0, 0, 0, 0.3);   /* Farthest shadow for a strong effect */
+transition: all 0.3s ease; /* Smooth transition on hover */
+margin-left: 1vh;
+}
+
+.registerUser-button .sbutton:hover {
+box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.2),   /* Light shadow on hover */
+    0 8px 12px rgba(0, 0, 0, 0.25),  /* Medium shadow on hover */
+    0 12px 24px rgba(0, 0, 0, 0.3);   /* Deeper shadow on hover for emphasis */
+}
+
+
+.registerUser-button .Cancelbutton{
+    width: 40vh;
+    font-size: 18px;
+    border-radius: 10px;
+    box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.1),   /* Light shadow for subtle depth */
+    0 4px 8px rgba(0, 0, 0, 0.15),  /* Slightly deeper shadow */
+    0 6px 12px rgba(0, 0, 0, 0.2),   /* Medium shadow for more definition */
+    0 8px 16px rgba(0, 0, 0, 0.25),  /* Deeper shadow for enhanced depth */
+    0 12px 24px rgba(0, 0, 0, 0.3);   /* Farthest shadow for a strong effect */
+    transition: all 0.3s ease; /* Smooth transition on hover */
+    margin-left: 2vh;
+}
+

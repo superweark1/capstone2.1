@@ -1,0 +1,149 @@
+.students-container {
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  margin-left: -65px;
+  width: 1240px;  
+
+}
+
+.students-list {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 700);
+  margin: 5px;
+  padding: 20px;
+  height: 500px;
+  width: 1240px;
+  margin-top: 17vh;
+  margin-left: -10px;
+  
+}
+
+.students-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.students-name h1 {
+  margin: 0;
+  color: #000000;
+}
+
+.students-search {
+  flex: 1;
+  margin: 0 20px;
+}
+
+.students-search-bar {
+  width: 32.5%;
+  padding: 8px ;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-left: 85vh;
+  margin-top: 12px;
+}
+
+.students-button-add {
+  margin-left: 10px;
+  margin-top: 1px;
+}
+
+.students-list-table {
+  width: 100%; /* Full width */
+  margin-top: 20px; /* Space above the table */
+  overflow-y: auto; /* Enable vertical scrolling if needed */
+}
+
+.tables {
+  width: 100%; /* Full width */
+  border-collapse: collapse;
+ 
+}
+
+.tables th,
+.tables td {
+  padding: 4px;
+  text-align: left;
+  border: 1px solid #ddd; /* Add borders to cells */
+  overflow: hidden; /* Prevent overflow */
+  text-overflow: ellipsis; /* Show ellipsis for overflowing text */
+  white-space: nowrap; /* Prevent line breaks */
+  text-align: center;
+}
+
+.tables th {
+  background-color: #f97800; /* Light background for header */
+  font-weight: bold; /* Bold text for header */
+}
+
+.tables tr:hover {
+  background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+.students-input-container {
+  margin-top: 20px;
+}
+
+.students-input-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.student-input {
+  margin-bottom: 10px;
+}
+
+.student-input label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.student-input input,
+.student-input select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.student-input select {
+  background-color: #fff;
+}
+
+.student-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.edit-student-button,
+.cancel-student-button {
+  width: 48%;
+}
+
+.edit-student-button {
+  background-color: #007bff;
+  color: white;
+}
+
+.cancel-student-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.edit-student-button:hover {
+  background-color: #0056b3;
+}
+
+.cancel-student-button:hover {
+  background-color: #c82333;
+}
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}

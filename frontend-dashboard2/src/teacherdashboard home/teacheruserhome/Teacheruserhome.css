@@ -1,0 +1,12 @@
+.teacheruserhome-side-container{
+    display: flex;
+  
+}
+.teacheruserhome-navbar-side{
+    margin-top: -41px;
+}
+
+.teacheruserhome-content{
+    margin-left: 42vh;
+    margin-top: 80px;
+}

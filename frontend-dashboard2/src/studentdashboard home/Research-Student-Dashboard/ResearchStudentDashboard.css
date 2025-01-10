@@ -1,0 +1,13 @@
+.ResearchStudentDashboard-home-side-container{
+    display: flex;
+  
+  }
+  
+  .navbar-ResearchStudentDashboard{
+    margin-top: -41px;
+  }
+  
+  .ResearchStudentDashboard-home-content{
+    margin-left: 50vh;
+    margin-top: 80px;
+  }

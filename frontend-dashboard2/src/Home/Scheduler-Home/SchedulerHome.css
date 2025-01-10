@@ -1,0 +1,16 @@
+.SchedulerHome{
+    display: flex;
+  
+}
+
+.scheduler-navbar{
+    margin-top: -43px;
+    margin-left: -250px;
+}
+
+
+
+.scheduler-content{
+    margin-left: 45vh;
+    margin-top: 80px;
+}

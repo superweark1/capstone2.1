@@ -1,0 +1,78 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Space between the cards */
+    padding: 20px;
+    margin-left: -50px;
+
+  }
+  
+  .card-page {
+    display: flex;
+    flex-direction: column;
+    width: 155vh;
+    padding: 20px;
+    gap: 20px;
+    
+    
+  }
+  
+  .card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(255, 254, 254);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.547);
+    padding: 15px 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 18vh;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    color: rgb(255, 102, 1);
+    font-size: 35px;
+  }
+  
+  .card-name {
+    flex: 1;
+    margin-left: 20px;
+  }
+  
+  .card-name h1 {
+    margin: 0;
+    font-size: 25px;
+    color: #000000b7;
+  }
+  
+  .card-name .count {
+    margin: 5px 0;
+    font-size: 25px;
+    font-weight: bold;
+    color: #000000bd;
+  }
+  
+  .card-name a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 20px;
+  }
+  
+  .card-name a:hover {
+    text-decoration: underline;
+  }
+  

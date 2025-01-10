@@ -1,0 +1,198 @@
+/* General container styles */
+.research-container {
+    width: 1230px;
+    margin: 0 auto;
+    padding: 12px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 700);
+    margin-top: 15vh;
+    margin-left: -7vh;
+}
+
+/* File upload section */
+.file-upload-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    margin-left: -135vh;
+    margin-top: -40px;
+}
+
+.file-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 250px;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.upload-trigger-button:hover {
+    background-color: #45a049;
+}
+
+/* Search bar styling */
+.search-bar-container {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.search-bar {
+    padding: 10px;
+    width: 40%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-right: 10px;
+    margin-right: 100vh;
+}
+
+/* Table styling */
+.research-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.research-table th, .research-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.research-table th {
+    background-color: #4fa1b8;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.research-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.research-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.research-table td a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.research-table td a:hover {
+    text-decoration: underline;
+}
+
+/* Button styles inside the table */
+.action-button {
+    padding: 8px 12px;
+    margin-right: 5px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    display: block;
+}
+
+.action-button:hover {
+    opacity: 0.85;
+}
+
+.action-button:first-child {
+    background-color: #2196F3; /* Blue for View */
+    color: white;
+}
+
+.action-button:nth-child(2) {
+    background-color: #FF9800; /* Orange for Update */
+    color: white;
+}
+
+.action-button:nth-child(3) {
+    background-color: #f44336; /* Red for Delete */
+    color: white;
+}
+
+/* Pagination styling */
+.MuiPagination-root {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.MuiPagination-ul li button {
+    color: #4cafaf;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .file-upload-container, .search-bar-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .file-input, .upload-trigger-button, .search-bar {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+/* Modal styles */
+.modal-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.input-field {
+    margin-bottom: 15px;
+}
+
+.input-field label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-field input[type="text"],
+.input-field input[type="number"],
+.input-field input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.upload-trigger-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 135vh;
+    margin-top: 55px;
+}
+
+.upload-modal-button{
+    background-color: #007bff;
+   width: 101%;
+   margin-left: -4px;
+}
+
+
+.upload-trigger-button:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,13 @@
+.AssignStudentPage-home-side-container{
+    display: flex;
+  
+}
+
+.navbar-AssignStudentPage{
+    margin-top: -41px;
+}
+
+.AssignStudentPage-home-content{
+    margin-left: 42vh;
+    margin-top: 80px;
+}

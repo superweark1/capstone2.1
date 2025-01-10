@@ -1,0 +1,103 @@
+/* Container for the entire student list */
+.AssignStudent-assign-container {
+  width: 1210px; /* Set a maximum width for the container */
+  margin-top: 18vh;
+  margin-left: -7vh;
+}
+
+/* Container for the student list content */
+.AssignStudent-assign-list1 {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 700);
+  margin: 13px;
+  padding: 20px;
+  height: 621px;
+  width: 1240px;
+}
+
+.AssignStudent-assign-list1 h1 {
+  text-align: left;
+}
+
+/* Table responsive styling */
+.AssignStudent-table-responsive {
+  overflow-x: auto;
+}
+
+.AssignStudent-controls-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  gap: 10px; /* Adds space between the search bar and button */
+}
+
+/* Search bar styling */
+.AssignStudent-assign-search-bar1 {
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 19%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin-left: 133vh;
+}
+
+.AssignStudent-controls-container button {
+  margin-left: -100vh;
+  margin-top: -9px;
+}
+
+/* Assign Table Styling */
+.AssignStudent-assign-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Styling for table header and cells */
+.AssignStudent-assign-table th,
+.AssignStudent-assign-table td {
+  padding: 4px;
+  text-align: left;
+  vertical-align: top;
+  word-wrap: break-word; /* Ensures text wraps within the column */
+  border: 1px solid #ddddddb9; /* Border around each cell */
+  overflow: hidden; /* Prevent overflow */
+  text-align: center;
+}
+
+/* Row styles */
+.AssignStudent-assign-table tr {
+  transition: background-color 0.3s; /* Smooth transition when hovering over rows */
+}
+
+.AssignStudent-assign-table tr:hover {
+  background-color: #f5f5f5; /* Row hover effect */
+}
+
+
+.assign-input-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 600px; /* Restrict modal width */
+  max-height: 80vh; /* Set a maximum height for modal */
+  overflow-y: auto; /* Allow scrolling for overflowing content */
+  margin: 0 auto; /* Center the modal content */
+}
+
+
+/* Styling for input fields */
+.assign-input input, 
+.assign-input2 input, 
+.assign-input3 select, 
+.assign-input4 select {
+  width: 100%; /* Ensure inputs take up full width */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 5px; /* Space between label and input */
+}
+
+

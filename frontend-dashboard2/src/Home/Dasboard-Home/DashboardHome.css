@@ -1,0 +1,14 @@
+.DashboardHomeside-container{
+    display: flex;
+  
+}
+
+.DashboardHomenavbar-side{
+    margin-top: -43px;
+    margin-left: -250px;
+}
+
+.DashboardHomecontent{
+    margin-left: 45vh;
+    margin-top: 80px;
+}

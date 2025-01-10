@@ -1,0 +1,123 @@
+/* RegisterHome.css */
+
+/* Container styles */
+.registerhome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-left: -10vh;
+    margin-top: 14.5vh;
+    
+}
+
+.registerhome-list {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 700);
+    width: 1220px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Header and search bar */
+.registerhome-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.registerhome-name h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.registerhome-search-bar1 {
+    width: 40vh;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-right: 90vh;
+    
+}
+
+.registerhome-search-bar1:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+/* Add button */
+.registerhome-button-add1 button {
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.registerhome-button-add1 button:hover {
+    background-color: #0056b3;
+}
+
+/* Table styles */
+.registerhome-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.registerhome-table th,
+.registerhome-table td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+.registerhome-table th {
+    background-color: #343a40;
+    color: white;
+    font-weight: bold;
+}
+
+.registerhome-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.registerhome-table td {
+    background-color: #f9f9f9;
+}
+
+/* Delete button */
+.registerUser-delete button {
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.registerUser-delete button:hover {
+    background-color: #c0392b;
+}
+
+/* Pagination */
+.MuiPagination-root {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination-register{
+    margin-left:135vh ;
+}
+.table1 {
+    width: 100%; /* Full width */
+    border-collapse: collapse;
+   
+  }

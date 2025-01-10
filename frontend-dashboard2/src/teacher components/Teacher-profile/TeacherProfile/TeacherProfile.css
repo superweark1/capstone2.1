@@ -1,0 +1,46 @@
+.TeacherProfile-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center; /* Center the profile horizontally */
+    align-items: center; /* Center the profile vertically */
+    background: #FF7417; /* Background color for the container */
+    margin-top: 20vh; /* Distance from the top of the page */
+    margin-left: 25vh; /* Distance from the left of the page */
+    height: 60vh; /* Height of the container */
+    width: 107vh; /* Width of the container */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3); /* Optional box shadow for 3D effect */
+    border-radius: 15px; /* Optional rounded corners */
+}
+
+
+.TeacherProfile-Images img {
+    width: 30%;
+    height: 30%;
+    border-radius: 50%;
+    background-color: black; 
+    padding: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin-top: 10vh;
+    margin-left: 20vh;
+}
+.TeacherProfile-Images {
+    margin-top: -10vh;
+    margin-left: -25vh;
+}
+
+ .TeacherProfile-info{
+    margin-top: 2vh;
+    margin-left: -1vh;
+}
+.TeacherProfile-info p{
+    margin-left: -50vh;
+    line-height: 2;
+    font-size: 19px;
+    color: white;
+    
+}
+
+.TeacherProfile-page button{
+    margin-top: 1vh;
+    margin-left: -50vh;
+}

@@ -1,0 +1,99 @@
+.Schedule {
+  width: 450px;
+  height: 90vh; /* Adjust this value to fit your layout */
+  padding: 0px; /* Optional padding around the calendar */
+  margin-top: 15vh;
+}
+
+.calendar {
+  height: 95%; /* Makes sure the calendar takes full height of the container */
+  width: 265%; /* Makes sure the calendar takes full width of the container */
+  margin-left: -40px;
+}
+
+.highlighted-date {
+  background-color: yellow; /* Or any color you prefer */
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.rbc-month-view-day {
+  cursor: pointer;
+}
+
+/* Modal Styles */
+.Modal {
+  position: fixed; /* Change to fixed to overlay correctly */
+  top: 50%;
+  left: 42%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px; /* Make sure it's rounded */
+  outline: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000; /* Make sure this is higher than any other element */
+  margin-top: -20vh;
+  
+  /* Animation effect for modal */
+  transform: scale(0.9);
+  opacity: 0;
+  animation: fadeInModal 0.3s forwards;
+}
+
+.Modal h2 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #333;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+.Modal p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.Modal strong {
+  color: #000;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.Overlay {
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999; /* Make sure this is lower than the modal */
+}
+
+/* Animation effect for modal */
+.Modal {
+  transform: scale(0.9);
+  opacity: 0;
+  animation: fadeInModal 0.3s forwards;
+}
+
+@keyframes fadeInModal {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

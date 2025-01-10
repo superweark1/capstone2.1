@@ -1,0 +1,13 @@
+.register-sidebar{
+    display: flex;
+}
+
+.register-navbar{
+    margin-top: -43px;
+    margin-left: -250px;
+}
+
+.register-content{
+    margin-left: 45vh;
+    margin-top: 80px;
+}

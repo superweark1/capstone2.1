@@ -1,0 +1,176 @@
+.GradeteachergradingWrapper{
+    display: flex;
+  }
+  /* GradingComponent Styles */
+  .Gradeteachergrading-container {
+      padding: 20px;
+      width: 350px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.693);
+      font-family: Arial, sans-serif;
+      margin-top: 7vh;
+      margin-left: -11vh;
+    }
+    
+    .Gradeteachergrading-container h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 1.5em;
+    }
+    
+    .Gradeteachergrading-container label {
+      display: block;
+      margin-bottom: 10px;
+      color: #555;
+      font-weight: bold;
+    }
+    
+    .Gradeteachergrading-container input[type="text"],
+    .Gradeteachergrading-container input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1em;
+      box-sizing: border-box;
+    }
+    
+    .Gradeteachergrading-container input[type="text"]:focus,
+    .Gradeteachergrading-container input[type="number"]:focus {
+      border-color: #007bff;
+      outline: none;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+    
+    .Gradeteachergrading-container button {
+      width: 50%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .Gradeteachergrading-container button:hover {
+      background-color: #0056b3;
+    }
+    
+    .Gradeteachergrading-container p {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 1.2em;
+      color: #333;
+      font-weight: bold;
+    }
+  
+    /* Grading table Styles */
+  .Gradeteachertable-container {
+    width: 104%;
+    padding: 20px;
+    margin-top: 27px;
+    margin-left: -7vh;
+    
+  }
+  
+  .Gradeteachertable {
+    
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.693);
+    margin-top: 30px;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #ff5b0f;
+    color: white;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tr:hover {
+    background-color: #ddd;
+  }
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.705);
+  }
+  .modal-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    
+  }
+  
+  .modal-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .modal-actions button:first-child {
+    background: #007bff;
+    color: white;
+    margin-left: 15vh;
+  }
+  
+  .modal-actions button:last-child {
+    background: #ccc;
+    margin-left: -20vh;
+  }
+    
+  .gradeteacherbutton {
+    margin-left: -172vh;
+    margin-top: 35px;
+  }
+  .recommendation-label {
+    display: block;
+    margin-top: 20px;
+    text-align: center; /* Centers the label text */
+  }
+  
+  .recommendation-grade {
+    display: block;
+    margin: 10px auto; /* Centers the box */
+    width: 95%; /* Fixed width */
+    height: 100px; /* Fixed height for solid box */
+    border: 1px solid #ccc; /* Solid border */
+    border-radius: 5px; /* Optional: Rounded corners */
+    padding: 10px; /* Inner padding for better readability */
+    resize: none; /* Disable resizing */
+    background-color: #f9f9f9; /* Optional: Light background */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow */
+  }
+  
+    

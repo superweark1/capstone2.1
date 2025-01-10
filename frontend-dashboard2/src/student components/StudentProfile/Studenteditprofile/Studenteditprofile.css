@@ -1,0 +1,66 @@
+.EditProfile-container{
+    display: flex;
+    justify-content: center; /* Center the profile horizontally */
+    align-items: center; /* Center the profile vertically */
+    background: #ffffff; /* Background color for the container */
+    margin-top: 20vh; 
+    margin-left: 65vh; /* Distance from the left of the page */
+    height: 60vh; /* Height of the container */
+    width: 107vh; /* Width of the container */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.564); /* Optional box shadow for 3D effect */
+    border-radius: 15px; /* Optional rounded corners */
+}
+
+.edit-profileimg{
+    margin-left: -5vh;
+}
+
+.edit-profileimg img {
+    width: 40%;
+    height: 40%;
+    border-radius: 50%;
+    background-color: black; 
+    padding: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin-top: -1vh;
+    margin-left: 5vh;
+}
+
+
+.editInput-txt label{
+    margin-left: -45vh;
+    color: white;
+}
+.editInput-txt input{
+    width: 50vh;
+    margin-left: -45vh;
+    border-radius: 10px;
+    height: 40px;
+}
+
+.editInput-txt select{
+    width: 50vh;
+    margin-left: -45vh;
+    border-radius: 10px;
+    height: 40px;
+}
+
+.edit-buttom{
+    display: flex;
+    margin-left: -100vh;
+}
+
+.edit-buttom button{
+    width: 100px;
+}
+
+
+.submitbutton-profile button{
+    cursor: pointer;
+    margin-left: 15vh;
+}
+
+.cancelbutton-profile button{
+    cursor: pointer;
+    margin-left: 5vh;
+}

@@ -1,0 +1,206 @@
+.TeacherPresentation-container {
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+
+  
+}
+.TeacherPresentationpresent{
+  background-color: #fff;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.658);
+   height: 50vh;
+   overflow-x: auto;
+   width: 169vh;
+   margin-left: -50px;
+}
+
+.TeacherPresentationtable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 5vh;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  color: #333; /* Darker text for better readability */
+}
+
+.TeacherPresentationtable th, 
+.TeacherPresentationtable td {
+  padding: 12px 15px; /* Add spacing for a clean look */
+  border: 1px solid #ddd; /* Subtle border between cells */
+  text-align: left; /* Align text for better readability */
+  width: 140vh;
+}
+
+.TeacherPresentationtable th {
+  background-color: #666666; /* Light background for headers */
+  font-weight: bold; /* Emphasize headers */
+  text-transform: uppercase; /* Capitalize header text for a professional look */
+  letter-spacing: 0.05em; /* Slight spacing for a clean look */
+}
+
+.TeacherPresentationtable tr:nth-child(even) {
+  background-color: #f9f9f9; /* Alternate row colors for readability */
+}
+
+.TeacherPresentationtable tr:hover {
+  background-color: #f1f1f1; /* Highlight row on hover for better UX */
+}
+
+.TeacherPresentationtable td {
+  width: auto; /* Adjust width automatically based on content */
+  vertical-align: middle; /* Align content in the middle vertically */
+}
+
+.TeacherPresentationtimer {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 25vh;
+  margin-top: -5vh;
+  margin-left: 60vh;
+  width: 80vh;
+
+  /* Centering content */
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+}
+
+
+.TeacherPresentationtimer.TeacherPresentationtimer-section{
+  margin: 10px;
+}
+
+.TeacherPresentationtimer-section h2{
+  text-align: center;
+  margin-top: -10px;
+}
+.TeacherPresentationtimer-section label{
+  padding: 10px;
+  margin-left: -1vh;
+}
+.TeacherPresentationtimer-section input{
+  margin-top: -20px;
+}
+.TeacherPresentationtimer-section button{
+  margin-left: 10px;
+  
+}
+
+.TeacherPresentationtimer-flex{
+  display: flex;
+}
+
+.TeacherPresentationborder {
+  background-color: white;
+  border: 2px solid black; /* Adjust the width (2px), style (solid), and color (white) as needed */
+  margin-top: 20px;
+  height: 35px;
+  border-radius:30px ;
+}
+
+.TeacherPresentationborder #timer{
+  margin-top: 5px;
+  
+}
+
+
+.TeacherPresentationtimer-section span{
+  text-align: center;
+   margin-top: 30vh;
+}
+
+
+.input-section, .TeacherPresentationtimer-section {
+  margin-bottom: 20px;
+}
+
+
+#timer {
+  font-size: 24px;
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+
+.TeacherPresentationcalendar-section{
+  margin-top: -25vh;
+}
+.react-calendar {
+  width: 100%;
+  border: 1px solid #151414;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-left: 50px;
+}
+
+.react-calendar__month-view__days__day {
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #ccc;
+}
+
+.react-calendar__tile--now {
+  background: #007bff;
+  color: white;
+  border-radius: 50%;
+}
+
+.react-calendar__tile--active {
+  background: #289ca7;
+  color: white;
+  border-radius: 50%;
+}
+
+.react-calendar__tile:hover {
+  background-color: #f0f0f0;
+  border-radius: 50%;
+}
+.react-calendar__navigation button {
+  min-width: 44px;
+  background: none;
+  color: #000000;
+}
+.warning-message {
+  color: #ff0000;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+/* Presentation.css */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.modal-content button {
+  margin: 10px;
+}
+.TeacherPresentationGradebuttons{
+  margin-left: 147vh;
+  width: 15vh;
+  margin-top: 10px;
+}
+
