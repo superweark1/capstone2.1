@@ -41,7 +41,7 @@ const Presentation = () => {
   useEffect(() => {
     const fetchGroupNames = async () => {
       try {
-        const response = await axios.get('http://localhost:5001/assign');
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/assign`);
         setGroupNames(response.data); // Assuming response.data contains group names for 'assign'
       } catch (error) {
         console.error('Error fetching group names for assign:', error);
@@ -50,7 +50,7 @@ const Presentation = () => {
   
     const fetchPresentationGroupNames = async () => {
       try {
-        const response = await axios.get('http://localhost:5001/schedulerdate');
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/schedulerdate`);
         setPresentationGroupNames(response.data); // Assuming response.data contains group names for 'schedulerdate'
       } catch (error) {
         console.error('Error fetching group names for schedulerdate:', error);

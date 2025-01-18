@@ -27,7 +27,7 @@ const ScheduleT = () => {
   // Function to fetch events from the backend
   const fetchEvents = async () => {
     try {
-      const response = await axios.get('http://localhost:5001/api/events');
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/events`);
       console.log('Fetched events:', response.data);
 
       // Format events to ensure start and end are Date objects

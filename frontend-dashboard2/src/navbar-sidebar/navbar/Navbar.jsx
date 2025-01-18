@@ -25,7 +25,7 @@ const Navbar = () => {
 
   const fetchUserData = () => {
     axios
-      .get('http://localhost:5001/', { withCredentials: true }) // Sending credentials (cookies)
+      .get(`${process.env.REACT_APP_API_URL}/`, { withCredentials: true }) // Sending credentials (cookies)
       .then((response) => {
         console.log('User data:', response.data);
         if (response.status === 200 && response.data.message === 'Profile retrieved successfully') {

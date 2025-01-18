@@ -18,7 +18,7 @@ const EditProfile = () => {
     useEffect(() => {
         const fetchProfileData = async () => {
             try {
-                const response = await axios.get('http://localhost:5001/', {
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/`, {
                     withCredentials: true, // Include cookies in the request
                 });
 
@@ -43,7 +43,7 @@ const EditProfile = () => {
         e.preventDefault();
         try {
             // Update profile data
-            await axios.put('http://localhost:5001/updateprofile', profileData, {
+            await axios.put(`${process.env.REACT_APP_API_URL}/updateprofile`, profileData, {
                 withCredentials: true, // Include cookies in the request
             });
             alert('Profile updated successfully!');

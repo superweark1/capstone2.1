@@ -31,7 +31,7 @@ const NewPassword = () => {
         }
 
         axios
-        .post("http://localhost:5001/reset-password" , {
+        .post(`${process.env.REACT_APP_API_URL}/reset-password` , {
             email,
             password: newPassword,
         })

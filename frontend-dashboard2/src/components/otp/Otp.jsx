@@ -53,7 +53,7 @@ const Otp = () => {
     setCanResend(false);
 
     axios
-    .post("http://localhost:5001/send-otp", { email })
+    .post(`${process.env.REACT_APP_API_URL}/send-otp`, { email })
     .then((response) => {
         console.log("Response from resend OTP:", response.data);
         setVerificationMessage("OTP has been resent to your email.");
@@ -68,7 +68,7 @@ const Otp = () => {
     const otpCode = otp.join("");  // Join the OTP digits
 
     axios
-    .post("http://localhost:5001/verify-otp", {email, otp: otpCode})  // Send email and otpCode correctly
+    .post(`${process.env.REACT_APP_API_URL}/verify-otp`, {email, otp: otpCode})  // Send email and otpCode correctly
     .then((response) => {
         if(response.data.success) {
             setVerificationMessage("OTP verified successfully!");

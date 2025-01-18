@@ -16,7 +16,7 @@ const Studentprofile = () => {
 
     useEffect(() => {
        
-        axios.get('http://localhost:5001/', { withCredentials: true }) 
+        axios.get(`${process.env.REACT_APP_API_URL}/`, { withCredentials: true }) 
             .then(response => {
                 const { user } = response.data;
                 setProfile(user); 

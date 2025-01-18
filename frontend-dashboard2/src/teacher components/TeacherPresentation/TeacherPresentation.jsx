@@ -4,8 +4,8 @@ import "react-calendar/dist/Calendar.css";
 import "./TeacherPresentation.css";
 import Modal from "./MOdal";
 import TimeEditModal from "./Timeeditmodal";
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const TeacherPresentation = () => {
   const [presenterName, setPresenterName] = useState("");
@@ -25,61 +25,56 @@ const TeacherPresentation = () => {
 
   const [groupNames, setGroupNames] = useState([]);
   const [fetchPresentationGroupNames, setPresentationGroupNames] = useState([]);
-  const [selectedGroup, setSelectedGroup] = useState('');
-  
+  const [selectedGroup, setSelectedGroup] = useState("");
+
   const navigate = useNavigate();
-  
 
-
-  
   useEffect(() => {
     const fetchGroupNames = async () => {
       try {
-        const response = await axios.get('http://localhost:5001/assign');
+        const response = await axios.get(
+          `${process.env.REACT_APP_API_URL}/assign`
+        );
         setGroupNames(response.data); // Assuming response.data contains group names for 'assign'
       } catch (error) {
-        console.error('Error fetching group names for assign:', error);
+        console.error("Error fetching group names for assign:", error);
       }
     };
-  
+
     const fetchPresentationGroupNames = async () => {
       try {
-        const response = await axios.get('http://localhost:5001/schedulerdate');
+        const response = await axios.get(
+          `${process.env.REACT_APP_API_URL}/schedulerdate`
+        );
         setPresentationGroupNames(response.data); // Assuming response.data contains group names for 'schedulerdate'
       } catch (error) {
-        console.error('Error fetching group names for schedulerdate:', error);
+        console.error("Error fetching group names for schedulerdate:", error);
       }
     };
-  
+
     fetchGroupNames();
     fetchPresentationGroupNames();
   }, []);
-  
-
-
 
   const handleChange = (event) => {
     setSelectedGroup(event.target.value);
   };
-  
+
   const handleMembers = () => {
-    navigate('/teacher-grading'); // Update with your PanelMembers route
+    navigate("/teacher-grading"); // Update with your PanelMembers route
   };
- 
 
-  
-
-// Timer functionality
-const startTimer = () => {
-  const [hours, minutes, seconds] = "01:15:00".split(":").map(Number); // 1 hour 15 minutes as default
-  const totalTimeInSeconds = hours * 3600 + minutes * 60 + seconds; // Convert time to seconds
-  setTimeLimit("01:15:00");
-  setRemainingTime(totalTimeInSeconds);
-  setIsTimerRunning(true);
-  setWasTimerStopped(false); // Reset wasTimerStopped when starting
-  setWarningShown({}); // Reset warnings
-  intervalRef.current = setInterval(updateTimer, 1000);
-};
+  // Timer functionality
+  const startTimer = () => {
+    const [hours, minutes, seconds] = "01:15:00".split(":").map(Number); // 1 hour 15 minutes as default
+    const totalTimeInSeconds = hours * 3600 + minutes * 60 + seconds; // Convert time to seconds
+    setTimeLimit("01:15:00");
+    setRemainingTime(totalTimeInSeconds);
+    setIsTimerRunning(true);
+    setWasTimerStopped(false); // Reset wasTimerStopped when starting
+    setWarningShown({}); // Reset warnings
+    intervalRef.current = setInterval(updateTimer, 1000);
+  };
 
   const stopTimer = () => {
     clearInterval(intervalRef.current);
@@ -87,7 +82,6 @@ const startTimer = () => {
     setWasTimerStopped(true); // Mark that the timer was stopped
     setWarningMessage(""); // Clear warning message when timer is stopped
     setIsModalOpen(false); // Close the modal when timer is stopped
-
   };
 
   const resumeTimer = () => {
@@ -122,27 +116,31 @@ const startTimer = () => {
     setTimer(`${hours}:${minutes}:${seconds}`);
 
     // Show warnings for 15 minutes and 5 minutes left
-    if (remainingTime <= 300 && remainingTime > 0 && !warningShown["5min"]) { // 5 minutes (300 seconds)
+    if (remainingTime <= 300 && remainingTime > 0 && !warningShown["5min"]) {
+      // 5 minutes (300 seconds)
       setWarningMessage("5 minutes left!");
       setIsModalOpen(true); // Show modal for 5 minutes left warning
       setWarningShown((prev) => ({ ...prev, "5min": true }));
-    } else if (remainingTime <= 900 && remainingTime > 300 && !warningShown["15min"]) { // 15 minutes (900 seconds)
+    } else if (
+      remainingTime <= 900 &&
+      remainingTime > 300 &&
+      !warningShown["15min"]
+    ) {
+      // 15 minutes (900 seconds)
       setWarningMessage("15 minutes left!");
       setIsModalOpen(true); // Show modal for 15 minutes left warning
       setWarningShown((prev) => ({ ...prev, "15min": true }));
-    } else if (remainingTime > 900) { // Clear warnings if more than 15 minutes
+    } else if (remainingTime > 900) {
+      // Clear warnings if more than 15 minutes
       setWarningMessage("");
     }
   }, [remainingTime, warningShown]);
-
-
 
   const handleTimeLimitChange = (newTimeLimit) => {
     setTimeLimit(newTimeLimit);
     setIsTimeEditModalOpen(false); // Close the time edit modal
   };
   return (
-    
     <div className="TeacherPresentation-container">
       <div className="TeacherPresentationinput1">
         <div className="TeacherPresentationpresent">
@@ -151,7 +149,6 @@ const startTimer = () => {
           <div className="TeacherPresentationinput-section">
             <div className="TeacherPresentationtable">
               <table>
-                
                 <thead>
                   <tr>
                     <th>Group Name</th>
@@ -165,57 +162,67 @@ const startTimer = () => {
                   </tr>
                 </thead>
                 <tbody>
-
-                {fetchPresentationGroupNames.map((fetchPresentationGroupNames) => (
-                <tr key={fetchPresentationGroupNames.id}>
-                  <td>{fetchPresentationGroupNames.group_name}</td>
-                  <td>{fetchPresentationGroupNames.name}</td>
-                  <td>{fetchPresentationGroupNames.research_title}</td>
-                  <td>{fetchPresentationGroupNames.adviser}</td>
-                  <td>{fetchPresentationGroupNames.panel_head}</td>
-                  <td>{fetchPresentationGroupNames.panel_members}</td>
-                  <td>{fetchPresentationGroupNames.start_date}</td>
-                  <td>{fetchPresentationGroupNames.start_time} -
-                    <br />
-                    {fetchPresentationGroupNames.end_time}
-                  </td>
-                  </tr>
-                  ))}
+                  {fetchPresentationGroupNames.map(
+                    (fetchPresentationGroupNames) => (
+                      <tr key={fetchPresentationGroupNames.id}>
+                        <td>{fetchPresentationGroupNames.group_name}</td>
+                        <td>{fetchPresentationGroupNames.name}</td>
+                        <td>{fetchPresentationGroupNames.research_title}</td>
+                        <td>{fetchPresentationGroupNames.adviser}</td>
+                        <td>{fetchPresentationGroupNames.panel_head}</td>
+                        <td>{fetchPresentationGroupNames.panel_members}</td>
+                        <td>{fetchPresentationGroupNames.start_date}</td>
+                        <td>
+                          {fetchPresentationGroupNames.start_time} -
+                          <br />
+                          {fetchPresentationGroupNames.end_time}
+                        </td>
+                      </tr>
+                    )
+                  )}
                 </tbody>
               </table>
             </div>
           </div>
         </div>
-        <div >
-          
-                <button className="TeacherPresentationGradebuttons" onClick={handleMembers}>Grade</button>
-                </div>
+        <div>
+          <button
+            className="TeacherPresentationGradebuttons"
+            onClick={handleMembers}
+          >
+            Grade
+          </button>
+        </div>
         <div className="TeacherPresentationtimer">
           <div className="TeacherPresentationtimer-section">
             <br />
             <h2>Presentation Timer</h2>
             <div className="TeacherPresentationtimer-flex">
-            <button onClick={() => setIsTimeEditModalOpen(true)}>
-               Edit Time Limit
-            </button>
-            <button onClick={startTimer} disabled={isTimerRunning && !wasTimerStopped}>
-               Start Time
-            </button>
-            {isTimerRunning && (
-            <button onClick={stopTimer}>Stop Time</button>
-            )}
-            {!isTimerRunning && wasTimerStopped && (
-            <button onClick={resumeTimer}>Resume Time</button>
-            )}
-            <br />
-            <br />
+              <button onClick={() => setIsTimeEditModalOpen(true)}>
+                Edit Time Limit
+              </button>
+              <button
+                onClick={startTimer}
+                disabled={isTimerRunning && !wasTimerStopped}
+              >
+                Start Time
+              </button>
+              {isTimerRunning && <button onClick={stopTimer}>Stop Time</button>}
+              {!isTimerRunning && wasTimerStopped && (
+                <button onClick={resumeTimer}>Resume Time</button>
+              )}
+              <br />
+              <br />
             </div>
             <div className="TeacherPresentationborder">
               <span id="timer">{timer}</span>
-              {warningMessage && <div className="TeacherPresentationwarning-message">{warningMessage}</div>}
+              {warningMessage && (
+                <div className="TeacherPresentationwarning-message">
+                  {warningMessage}
+                </div>
+              )}
             </div>
           </div>
-          
         </div>
         <div className="TeacherPresentationcalendar-section">
           <Calendar onChange={setSelectedDate} value={selectedDate} />

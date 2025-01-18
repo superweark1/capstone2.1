@@ -27,7 +27,7 @@ const Schedule = () => {
 
   const fetchEvents = async () => {
     try {
-      const response = await axios.get('http://localhost:5001/api/events');  // Ensure this matches your backend URL
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/events`);  // Ensure this matches your backend URL
       console.log('Fetched events:', response.data);
   
       const formattedEvents = response.data

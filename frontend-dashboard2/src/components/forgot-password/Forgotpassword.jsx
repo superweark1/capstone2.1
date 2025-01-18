@@ -33,7 +33,7 @@ const Forgotpassword = () => {
 
         setLoading(true);
         axios
-        .post("http://localhost:5001/send-otp", {email})
+        .post(`${process.env.REACT_APP_API_URL}/send-otp`, {email})
         .then((response) => {
             setMessage("Please enter your email.");
             Navigate("/otp", {state: {email}});

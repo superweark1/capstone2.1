@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Calendar, momentLocalizer, Views } from 'react-big-calendar';
-import moment from 'moment';
-import 'react-big-calendar/lib/css/react-big-calendar.css';
-import './ScheduleStudentPage.css';
-import Modal from 'react-modal'; // Import react-modal
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Calendar, momentLocalizer, Views } from "react-big-calendar";
+import moment from "moment";
+import "react-big-calendar/lib/css/react-big-calendar.css";
+import "./ScheduleStudentPage.css";
+import Modal from "react-modal"; // Import react-modal
 
 // Set the app element for accessibility
-Modal.setAppElement('#root'); // Make sure to change '#root' to your app's root element if different
+Modal.setAppElement("#root"); // Make sure to change '#root' to your app's root element if different
 
 // Set up localizer for the calendar
 const localizer = momentLocalizer(moment);
@@ -27,21 +27,23 @@ const ScheduleStudentPage = () => {
   // Function to fetch events from the backend
   const fetchEvents = async () => {
     try {
-      const response = await axios.get('http://localhost:5001/api/events');
-      console.log('Fetched events:', response.data);
+      const response = await axios.get(
+        `${process.env.REACT_APP_API_URL}/api/events`
+      );
+      console.log("Fetched events:", response.data);
 
       // Format events to ensure start and end are Date objects
       const formattedEvents = response.data
-        .map(event => ({
+        .map((event) => ({
           ...event,
           start: new Date(event.start),
           end: new Date(event.end),
         }))
-        .filter(event => event.start && event.end); // Filter out invalid events
+        .filter((event) => event.start && event.end); // Filter out invalid events
 
       setMyEventsList(formattedEvents);
     } catch (error) {
-      console.error('Error fetching events:', error);
+      console.error("Error fetching events:", error);
     }
   };
 
@@ -58,11 +60,11 @@ const ScheduleStudentPage = () => {
 
   // Custom day cell component
   const CustomDayCell = ({ value, children }) => {
-    const isHighlighted = moment(value).isSame(highlightedDate, 'day');
+    const isHighlighted = moment(value).isSame(highlightedDate, "day");
 
     return (
       <div
-        className={`rbc-month-cell ${isHighlighted ? 'highlighted-date' : ''}`}
+        className={`rbc-month-cell ${isHighlighted ? "highlighted-date" : ""}`}
         onClick={() => setHighlightedDate(value)}
       >
         {children}
@@ -83,7 +85,7 @@ const ScheduleStudentPage = () => {
   };
 
   return (
-    <div className='Schedule1'>
+    <div className="Schedule1">
       <Calendar
         localizer={localizer}
         events={myEventsList}
@@ -104,9 +106,9 @@ const ScheduleStudentPage = () => {
       />
 
       {/* Modal for event details */}
-      <Modal 
-        isOpen={modalIsOpen} 
-        onRequestClose={closeModal} 
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
         contentLabel="Event Details"
         className="Modal"
         overlayClassName="Overlay"
@@ -114,14 +116,30 @@ const ScheduleStudentPage = () => {
         <h2>Schedule</h2>
         {selectedEvent && (
           <div>
-            <p><strong>Group Name:</strong> {selectedEvent.title}</p>
-            <p><strong>Name:</strong> {selectedEvent.name}</p>
-            <p><strong>Adviser:</strong> {selectedEvent.adviser}</p>
-            <p><strong>Panel Head:</strong> {selectedEvent.panel_head}</p>
-            <p><strong>Panel Members:</strong> {selectedEvent.panel_members}</p>
-            <p><strong>Research Title:</strong> {selectedEvent.research_title}</p>
-            <p><strong>Start:</strong> {selectedEvent.start.toString()}</p>
-            <p><strong>End:</strong> {selectedEvent.end.toString()}</p>
+            <p>
+              <strong>Group Name:</strong> {selectedEvent.title}
+            </p>
+            <p>
+              <strong>Name:</strong> {selectedEvent.name}
+            </p>
+            <p>
+              <strong>Adviser:</strong> {selectedEvent.adviser}
+            </p>
+            <p>
+              <strong>Panel Head:</strong> {selectedEvent.panel_head}
+            </p>
+            <p>
+              <strong>Panel Members:</strong> {selectedEvent.panel_members}
+            </p>
+            <p>
+              <strong>Research Title:</strong> {selectedEvent.research_title}
+            </p>
+            <p>
+              <strong>Start:</strong> {selectedEvent.start.toString()}
+            </p>
+            <p>
+              <strong>End:</strong> {selectedEvent.end.toString()}
+            </p>
           </div>
         )}
         <button onClick={closeModal}>Close</button>

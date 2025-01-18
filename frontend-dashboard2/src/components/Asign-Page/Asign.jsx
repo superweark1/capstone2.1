@@ -42,7 +42,7 @@ const Asign = () => {
   useEffect(() => {
     const fetchStudents = async () => {
       try {
-        const response = await axios.get('http://localhost:5001/student-list');
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/student-list`);
         const sortedGroups = response.data.sort((a, b) => b.id - a.id); // Sort by id in descending order
         setStudents(response.data);
       } catch (error) {
@@ -52,7 +52,7 @@ const Asign = () => {
 
     const fetchTeachers = async () => {
       try {
-        const response = await axios.get('http://localhost:5001/teacher');
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/teacher`);
         setTeachers(response.data);
       } catch (error) {
         console.error('Error fetching teachers:', error);
@@ -61,7 +61,7 @@ const Asign = () => {
 
     const fetchGroups = async () => {
       try {
-        const response = await axios.get('http://localhost:5001/assign');
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/assign`);
         const sortedGroups = response.data.sort((a, b) => b.id - a.id); // Sort by id in descending order
         setGroups(sortedGroups);
       } catch (error) {

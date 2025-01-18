@@ -19,7 +19,9 @@ const Grade = () => {
   useEffect(() => {
     const fetchGroupNames = async () => {
       try {
-        const response = await axios.get("http://localhost:5001/assign");
+        const response = await axios.get(
+          `${process.env.REACT_APP_API_URL}/assign`
+        );
         setGroupNames(response.data);
       } catch (error) {
         console.error("Error fetching group names:", error);
@@ -32,7 +34,7 @@ const Grade = () => {
   useEffect(() => {
     // Fetch data from the backend when the component is mounted
     axios
-      .get("http://localhost:5001/grades")
+      .get(`${process.env.REACT_APP_API_URL}/grades`)
       .then((response) => {
         setGrades(response.data); // Set the grades data into state
       })
@@ -146,15 +148,22 @@ const Grade = () => {
     const payload = {
       group_name: selectedGroup,
       [gradeColumn]: totalPoints, // Send totalPoints for the specific panel grade
-      ...(panelRole === "Panel Head" && { panelhead_recommendation: recommendation }),
-      ...(panelRole === "Panel Member" && paneltypes === "Panel 1" && { panel_1_recommendation: recommendation }),
-      ...(panelRole === "Panel Member" && paneltypes === "Panel 2" && { panel_2_recommendation: recommendation }),
+      ...(panelRole === "Panel Head" && {
+        panelhead_recommendation: recommendation,
+      }),
+      ...(panelRole === "Panel Member" &&
+        paneltypes === "Panel 1" && { panel_1_recommendation: recommendation }),
+      ...(panelRole === "Panel Member" &&
+        paneltypes === "Panel 2" && { panel_2_recommendation: recommendation }),
       ...(panelRole === "Panel Head" && { revision_type: revisionType }),
       final_grade: finalGrade, // Send the calculated final grade separately
     };
 
     try {
-      const response = await axios.post("http://localhost:5001/api/grades1", payload);
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_URL}/api/grades1`,
+        payload
+      );
       console.log("Grade updated successfully:", response.data);
       window.alert("Grade updated successfully!");
     } catch (error) {
@@ -215,94 +224,96 @@ const Grade = () => {
         </div>
       </div>
       <div>
-      <button className="gradeteacherbutton1"onClick={toggleModal}>Grade</button>
+        <button className="gradeteacherbutton1" onClick={toggleModal}>
+          Grade
+        </button>
 
-      {isModalOpen && (
-        <div className="modal-overlay">
-          <div className="modal-content">
-            <h2>Grading Table</h2>
+        {isModalOpen && (
+          <div className="modal-overlay">
+            <div className="modal-content">
+              <h2>Grading Table</h2>
 
-            <label>
-              Select Group:
-              <select
-                value={selectedGroup}
-                onChange={(e) => setSelectedGroup(e.target.value)}
-              >
-                <option value="" disabled>
-                  Choose a group
-                </option>
-                {groupNames.map((group, index) => (
-                  <option key={index} value={group.group_name}>
-                    {group.group_name}
-                  </option>
-                ))}
-              </select>
-            </label>
-
-            <label>
-              Panel Role:
-              <select
-                value={panelRole}
-                onChange={(e) => setPanelRole(e.target.value)}
-              >
-                <option value="" disabled>
-                  Choose a role
-                </option>
-                {panelRoles.map((role, index) => (
-                  <option key={index} value={role}>
-                    {role}
-                  </option>
-                ))}
-              </select>
-            </label>
-
-            {panelRole === "Panel Member" && (
               <label>
-                Panel Type:
+                Select Group:
                 <select
-                  value={paneltypes}
-                  onChange={(e) => setPaneltypes(e.target.value)}
+                  value={selectedGroup}
+                  onChange={(e) => setSelectedGroup(e.target.value)}
                 >
                   <option value="" disabled>
-                    Choose panel type
+                    Choose a group
                   </option>
-                  {panelTypes.map((type, index) => (
-                    <option key={index} value={type}>
-                      {type}
+                  {groupNames.map((group, index) => (
+                    <option key={index} value={group.group_name}>
+                      {group.group_name}
                     </option>
                   ))}
                 </select>
               </label>
-            )}
 
-            <label>
-              Project Grade:
-              <input
-                type="number"
-                value={projectGrade}
-                onChange={(e) => setProjectGrade(Number(e.target.value))}
-              />
-            </label>
+              <label>
+                Panel Role:
+                <select
+                  value={panelRole}
+                  onChange={(e) => setPanelRole(e.target.value)}
+                >
+                  <option value="" disabled>
+                    Choose a role
+                  </option>
+                  {panelRoles.map((role, index) => (
+                    <option key={index} value={role}>
+                      {role}
+                    </option>
+                  ))}
+                </select>
+              </label>
 
-            <label>
-              Content Grade:
-              <input
-                type="number"
-                value={contentGrade}
-                onChange={(e) => setContentGrade(Number(e.target.value))}
-              />
-            </label>
+              {panelRole === "Panel Member" && (
+                <label>
+                  Panel Type:
+                  <select
+                    value={paneltypes}
+                    onChange={(e) => setPaneltypes(e.target.value)}
+                  >
+                    <option value="" disabled>
+                      Choose panel type
+                    </option>
+                    {panelTypes.map((type, index) => (
+                      <option key={index} value={type}>
+                        {type}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              )}
 
-            <label>
-              Presentation Grade:
-              <input
-                type="number"
-                value={presentationGrade}
-                onChange={(e) => setPresentationGrade(Number(e.target.value))}
-              />
-            </label>
+              <label>
+                Project Grade:
+                <input
+                  type="number"
+                  value={projectGrade}
+                  onChange={(e) => setProjectGrade(Number(e.target.value))}
+                />
+              </label>
 
-            <label className="recommendation-label">
+              <label>
+                Content Grade:
+                <input
+                  type="number"
+                  value={contentGrade}
+                  onChange={(e) => setContentGrade(Number(e.target.value))}
+                />
+              </label>
+
+              <label>
+                Presentation Grade:
+                <input
+                  type="number"
+                  value={presentationGrade}
+                  onChange={(e) => setPresentationGrade(Number(e.target.value))}
+                />
+              </label>
+
+              <label className="recommendation-label">
                 Recommendation:
                 <textarea
                   className="recommendation-grade"
@@ -311,34 +322,33 @@ const Grade = () => {
                 />
               </label>
 
-
-            {panelRole === "Panel Head" && (
-              <label>
-                Revision Type:
-                <select
-                  value={revisionType}
-                  onChange={(e) => setRevisionType(e.target.value)}
-                >
-                  <option value="" disabled>
-                    Choose revision type
-                  </option>
-                  {revisionTypes.map((type, index) => (
-                    <option key={index} value={type}>
-                      {type}
+              {panelRole === "Panel Head" && (
+                <label>
+                  Revision Type:
+                  <select
+                    value={revisionType}
+                    onChange={(e) => setRevisionType(e.target.value)}
+                  >
+                    <option value="" disabled>
+                      Choose revision type
                     </option>
-                  ))}
-                </select>
-              </label>
-            )}
+                    {revisionTypes.map((type, index) => (
+                      <option key={index} value={type}>
+                        {type}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              )}
 
-            <div className="modal-actions">
-              <button onClick={submitGrade}>Submit Grade</button>
-              <button onClick={toggleModal}>Close</button>
+              <div className="modal-actions">
+                <button onClick={submitGrade}>Submit Grade</button>
+                <button onClick={toggleModal}>Close</button>
+              </div>
             </div>
           </div>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
     </div>
   );
 };

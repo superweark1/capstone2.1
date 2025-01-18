@@ -66,7 +66,7 @@ const Research = ({ researchId }) => {
         formData.append('year', year);
       
         try {
-          const response = await axios.post('http://localhost:5001/upload', formData, {
+          const response = await axios.post(`${process.env.REACT_APP_API_URL}/upload`, formData, {
             headers: {
               'Content-Type': 'multipart/form-data',
             },
@@ -103,7 +103,7 @@ const Research = ({ researchId }) => {
           formData.append('file', fileToUpload);
       
           try {
-            const uploadResponse = await axios.post('http://localhost:5001/upload', formData);
+            const uploadResponse = await axios.post('${process.env.REACT_APP_API_URL}/upload', formData);
             filePath = uploadResponse.data.filePath; // Get the file path from the upload response
           } catch (uploadError) {
             console.error('Error uploading file:', uploadError);
@@ -114,7 +114,7 @@ const Research = ({ researchId }) => {
       
         // Now update the research record with the title, author, year, and optional file path
         try {
-          const response = await axios.put(`http://localhost:5001/update/${fileIdToUpdate}`, {
+          const response = await axios.put(`${process.env.REACT_APP_API_URL}/update/${fileIdToUpdate}`, {
             title,
             author,
             year,
@@ -136,7 +136,7 @@ const Research = ({ researchId }) => {
 
     const fetchFiles = async () => {
         try {
-            const response = await axios.get('http://localhost:5001/files');
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/files`);
             setFiles(response.data);
             setTotalPages(Math.ceil(response.data.length / filesPerPage));
         } catch (error) {
@@ -146,7 +146,7 @@ const Research = ({ researchId }) => {
 
     const downloadFile = async (filename) => {
         try {
-            const response = await axios.get(`http://localhost:5001/download/${filename}`, {
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/download/${filename}`, {
                 responseType: 'blob',
             });
             const url = window.URL.createObjectURL(new Blob([response.data]));

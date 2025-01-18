@@ -23,7 +23,7 @@ const RegisterUsers = () => {
 
         try {
             // Connect to the backend registration endpoint
-            const response = await axios.post('http://localhost:5001/register', {
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/register`, {
                 firstname,
                 lastname,
                 email,

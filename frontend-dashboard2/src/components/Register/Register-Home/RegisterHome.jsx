@@ -14,7 +14,7 @@ const RegisterHome = () => {
 
   // Fetch students from the backend when the component mounts
   useEffect(() => {
-    axios.get('http://localhost:5001/studentsDashboard')
+    axios.get(`${process.env.REACT_APP_API_URL}/studentsDashboard`)
       .then(response => {
         console.log(response.data); // Log the data for debugging
         setStudents(response.data); // Set the fetched data to state
@@ -26,7 +26,7 @@ const RegisterHome = () => {
 
   // Function to delete a student
   const deleteStudent = (id) => {
-    axios.delete(`http://localhost:5001/studentsDelete/${id}`)
+    axios.delete(`${process.env.REACT_APP_API_URL}/studentsDelete/${id}`)
       .then(() => {
         setStudents(prevStudents => prevStudents.filter(student => student.id !== id));
       })
