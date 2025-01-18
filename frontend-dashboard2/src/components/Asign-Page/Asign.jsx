@@ -134,11 +134,11 @@ const Asign = () => {
       };
   
       if (editingId) {
-        await axios.put(`http://localhost:5001/update-group/${editingId}`, newGroup);
+        await axios.put(`${process.env.REACT_APP_API_URL}/update-group/${editingId}`, newGroup);
         addNotification(`Group "${group_name}" updated successfully!`);
         alert('Group updated successfully!');
       } else {
-        await axios.post('http://localhost:5001/create-group', newGroup);
+        await axios.post(`${process.env.REACT_APP_API_URL}/create-group`, newGroup);
         addNotification(`New group "${group_name}" added successfully!`);
         alert('Group added successfully!');
       }
@@ -172,7 +172,7 @@ const Asign = () => {
   const handleDelete = async (id) => {
     try {
       const group = groups.find(item => item.id === id);
-      await axios.delete(`http://localhost:5001/delete-assign/${id}`);
+      await axios.delete(`${process.env.REACT_APP_API_URL}/delete-assign/${id}`);
       setGroups(groups.filter((item) => item.id !== id));
       addNotification(`Group "${group?.group_name}" deleted successfully!`);
     } catch (err) {
@@ -232,7 +232,7 @@ const suggestPanelBasedOnExpertise = (title) => {
 
 
 const addNotification = (message) => {
-  axios.post('http://localhost:5001/add-notification', { message })
+  axios.post(`${process.env.REACT_APP_API_URL}/add-notification`, { message })
     .then(response => console.log("Notification added:", response))
     .catch(error => console.error("Error adding notification:", error));
 };
