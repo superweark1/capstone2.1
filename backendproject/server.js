@@ -399,6 +399,7 @@ app.post("/login", async (req, res) => {
             secure: false,
             sameSite: "lax",
           });
+
           return res.json({
             status: "success",
             role: user.role,
@@ -407,6 +408,7 @@ app.post("/login", async (req, res) => {
             email: user.email,
             gender: user.gender,
             birthdate: user.birthdate,
+            token: token,
           });
         } else {
           return res.status(401).json({ Message: "Incorrect Password" });

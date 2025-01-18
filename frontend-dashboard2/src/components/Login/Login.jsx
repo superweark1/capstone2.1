@@ -19,6 +19,8 @@ const Login = () => {
 
         try {
             const response = await axios.post(`${process.env.REACT_APP_API_URL}/login`, values);
+            console.log(response);
+            
             if (response.data) {
                 alert("Login successful");
 
