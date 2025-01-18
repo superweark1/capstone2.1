@@ -4,10 +4,6 @@ import Teachersidebar from '../../teacher components/teacher-sidebar/Teacherside
 import TeacherNavbar from '../../teacher components/teacher-navbar/TeacherNavbar';
 import Assignstudents from '../../teacher components/Assign-studentsdashboard/Assignstudents';
 
-
-
-
-
 const Assigndasboardt = () => {
   return (
     <div className='AssignStudentPage-home-side-container'>

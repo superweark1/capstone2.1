@@ -396,8 +396,11 @@ app.post("/login", async (req, res) => {
 
           res.cookie("token", token, {
             httpOnly: true,
-            secure: false,
-            sameSite: "lax",
+            secure: true, // Enable for HTTPS
+            sameSite: "none", // Required for cross-origin
+            domain: ".vercel.app", // Match your frontend domain
+            maxAge: 24 * 60 * 60 * 1000, // 24 hours
+            path: "/",
           });
 
           return res.json({
