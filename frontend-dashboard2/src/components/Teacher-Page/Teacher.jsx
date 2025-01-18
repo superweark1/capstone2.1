@@ -122,8 +122,8 @@ const Teacher = () => {
     }
 
     const url = editMode
-      ? `http://localhost:5001/teacher-update/${selectedTeacher.id}`
-      : "http://localhost:5001/teacher-create";
+      ? `${process.env.REACT_APP_API_URL}/teacher-update/${selectedTeacher.id}`
+      : `${process.env.REACT_APP_API_URL}/teacher-create`;
     const method = editMode ? "put" : "post";
 
     const teacherData = {
@@ -168,7 +168,7 @@ const Teacher = () => {
 
         // Refetch the teachers list to reflect the new addition or update
         axios
-          .get("http://localhost:5001/teacher")
+          .get(`${process.env.REACT_APP_API_URL}/teacher`)
           .then((response) => {
             setTeachers(response.data); // Update the teachers with the new data
           })
@@ -200,13 +200,13 @@ const Teacher = () => {
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this teacher?")) {
       axios
-        .delete(`http://localhost:5001/teacher-delete/${id}`)
+        .delete(`${process.env.REACT_APP_API_URL}/teacher-delete/${id}`)
         .then((res) => {
           console.log("Teacher deleted successfully:", res.data);
 
           // Refetch the teachers list to reflect the deletion
           axios
-            .get("http://localhost:5001/teacher")
+            .get(`${process.env.REACT_APP_API_URL}/teacher`)
             .then((response) => {
               setTeachers(response.data); // Update the teachers with the new data
             })
@@ -225,7 +225,7 @@ const Teacher = () => {
     const newStatus = event.target.value;
 
     axios
-      .put(`http://localhost:5001/teacher-update/${id}`, {
+      .put(`${process.env.REACT_APP_API_URL}/teacher-update/${id}`, {
         status: newStatus,
       })
       .then((res) => {
@@ -246,7 +246,7 @@ const Teacher = () => {
 
   const addNotification = (message) => {
     axios
-      .post("http://localhost:5001/add-notification", { message })
+      .post(`${process.env.REACT_APP_API_URL}/add-notification`, { message })
       .then((response) => console.log("Notification added:", response))
       .catch((error) => console.error("Error adding notification:", error));
   };
