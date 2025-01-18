@@ -103,7 +103,7 @@ const Research = ({ researchId }) => {
           formData.append('file', fileToUpload);
       
           try {
-            const uploadResponse = await axios.post('${process.env.REACT_APP_API_URL}/upload', formData);
+            const uploadResponse = await axios.post(`${process.env.REACT_APP_API_URL}/upload`, formData);
             filePath = uploadResponse.data.filePath; // Get the file path from the upload response
           } catch (uploadError) {
             console.error('Error uploading file:', uploadError);
@@ -182,7 +182,7 @@ const Research = ({ researchId }) => {
     // Handle viewing of specific file
     const handleView = async (fileId) => {
         try {
-            const response = await axios.get(`http://localhost:5001/viewfile/${fileId}`);
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/viewfile/${fileId}`);
             setViewFile(response.data); // Set the fetched file data
             setOpenView(true); // Open the modal
         } catch (error) {
@@ -195,7 +195,7 @@ const Research = ({ researchId }) => {
     const handleDelete = async (fileId) => {
         if (window.confirm("Are you sure you want to delete this file?")) {
             try {
-                const response = await axios.delete(`http://localhost:5001/delete/${fileId}`);
+                const response = await axios.delete(`${process.env.REACT_APP_API_URL}/delete/${fileId}`);
                 alert(response.data.message); // Show success message
                 fetchFiles(); // Fetch the updated list of files
             } catch (error) {
@@ -205,7 +205,7 @@ const Research = ({ researchId }) => {
         }
     };
     const addNotification = (message) => {
-        axios.post('http://localhost:5001/add-notification', { message })
+        axios.post(`${process.env.REACT_APP_API_URL}/add-notification`, { message })
           .then(response => console.log("Notification added:", response))
           .catch(error => console.error("Error adding notification:", error));
       };
