@@ -28,7 +28,7 @@ app.use(fileUpload());
 
 app.use(
   cors({
-    origin: "*",
+    origin: ["https://capstone2-1-two.vercel.app", "http://localhost:3000"],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   })
