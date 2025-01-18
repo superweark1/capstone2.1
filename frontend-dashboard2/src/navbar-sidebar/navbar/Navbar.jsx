@@ -24,36 +24,44 @@ const Navbar = () => {
   const [unreadNotificationsCount, setUnreadNotificationsCount] = useState(0);
 
   const fetchUserData = () => {
+    const token = localStorage.getItem('authToken'); // Replace with your storage method
+
     axios
-      .get(`${process.env.REACT_APP_API_URL}/`, { withCredentials: true }) // Sending credentials (cookies)
-      .then((response) => {
-        console.log('User data:', response.data);
-        if (response.status === 200 && response.data.message === 'Profile retrieved successfully') {
-          setUser({
-            firstname: response.data.user.firstname || "",
-            lastname: response.data.user.lastname || "",
-            email: response.data.user.email || ""
-          });
-        } else {
-          alert('Failed to fetch user data');
-        }
-      })
-      .catch((error) => {
-        if (error.response) {
-          console.error('Error fetching user data:', error.response.data);
-          alert(`Error: ${error.response.data.message || 'An error occurred'}`);
-        } else if (error.request) {
-          console.error('No response received:', error.request);
-          alert('No response received from the server. Please try again.');
-        } else {
-          console.error('Error:', error.message);
-          alert('An error occurred while fetching user data.');
-        }
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  };
+        .get(`${process.env.REACT_APP_API_URL}/`, {
+            headers: {
+                Authorization: `Bearer ${token}`, // Attach the token in the Authorization header
+            },
+            withCredentials: true, // Include credentials (cookies) if required by the server
+        })
+        .then((response) => {
+            console.log('User data:', response.data);
+            if (response.status === 200 && response.data.message === 'Profile retrieved successfully') {
+                setUser({
+                    firstname: response.data.user.firstname || "",
+                    lastname: response.data.user.lastname || "",
+                    email: response.data.user.email || "",
+                });
+            } else {
+                alert('Failed to fetch user data');
+            }
+        })
+        .catch((error) => {
+            if (error.response) {
+                console.error('Error fetching user data:', error.response.data);
+                alert(`Error: ${error.response.data.message || 'An error occurred'}`);
+            } else if (error.request) {
+                console.error('No response received:', error.request);
+                alert('No response received from the server. Please try again.');
+            } else {
+                console.error('Error:', error.message);
+                alert('An error occurred while fetching user data.');
+            }
+        })
+        .finally(() => {
+            setLoading(false);
+        });
+};
+
 
   useEffect(() => {
     fetchUserData();
