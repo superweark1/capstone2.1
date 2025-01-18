@@ -199,13 +199,13 @@ const Student = () => {
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this student?")) {
       axios
-        .delete(`http://localhost:5001/student-delete/${id}`)
+        .delete(`${process.env.REACT_APP_API_URL}/student-delete/${id}`)
         .then((res) => {
           console.log("Student deleted successfully:", res.data);
 
           // Refetch the students list to reflect the deletion
           axios
-            .get("http://localhost:5001/student-list")
+            .get(`"${process.env.REACT_APP_API_URL}/student-list`)
             .then((response) => {
               setStudents(response.data); // Update the students with the new data
             })
@@ -222,7 +222,7 @@ const Student = () => {
 
   const addNotification = (message) => {
     axios
-      .post("http://localhost:5001/add-notification", { message })
+      .post(`${process.env.REACT_APP_API_URL}/add-notification`, { message })
       .then((response) => console.log("Notification added:", response))
       .catch((error) => console.error("Error adding notification:", error));
   };
