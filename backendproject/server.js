@@ -300,7 +300,7 @@ const verifyUser = (req, res, next) => {
 
   jwt.verify(
     token,
-    process.env.JWT_SECRET || "new-secret-key",
+     "a3d5c@Xv9zQb*VfT!P2wK+9hU8yD$6NkpQk%7VzL3r4S8Z5Tb@KmJ3wY6b1+6nV8",
     (err, decoded) => {
       if (err) {
         return res.status(401).json({ message: "Invalid or expired token." });
@@ -390,14 +390,14 @@ app.post("/login", async (req, res) => {
               gender: user.gender,
               birthdate: user.birthdate,
             },
-            "new-secret-key",
+            "a3d5c@Xv9zQb*VfT!P2wK+9hU8yD$6NkpQk%7VzL3r4S8Z5Tb@KmJ3wY6b1+6nV8",
             { expiresIn: "30d" } // Fix the option here
           );
 
           res.cookie("token", token, {
             httpOnly: true,
             secure: true, // Enable for HTTPS
-            sameSite: "none", // Required for cross-origin
+            sameSite: "None", // Required for cross-origin
             domain: ".vercel.app", // Match your frontend domain
             maxAge: 24 * 60 * 60 * 1000, // 24 hours
             path: "/",
