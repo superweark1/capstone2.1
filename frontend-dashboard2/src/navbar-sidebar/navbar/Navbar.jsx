@@ -116,7 +116,7 @@ useEffect(() => {
 }, []);
 
 const fetchNotifications = () => {
-  axios.get('http://localhost:5001/get-notifications')
+  axios.get(`${process.env.REACT_APP_API_URL}/get-notifications`)
     .then(response => {
       setNotifications(response.data.notifications);
       setUnreadNotificationsCount(response.data.notifications.length); // I-set ang bilang ng unread
@@ -139,7 +139,7 @@ const removeNotification = (index) => {
   const notificationId = notifications[index].id; // Assuming the notification has an 'id' field
 
   // Mark the notification as read on the backend
-  axios.put(`http://localhost:5001/mark-notification-read/${notificationId}`)
+  axios.put(`${process.env.REACT_APP_API_URL}/mark-notification-read/${notificationId}`)
     .then(response => {
       console.log('Notification marked as read:', response.data.message);
 
@@ -160,7 +160,7 @@ const removeNotification = (index) => {
 
 useEffect(() => {
   // Fetch the unread notification count when the page loads
-  axios.get('http://localhost:5001/unread-notification-count')
+  axios.get(`${process.env.REACT_APP_API_URL}/unread-notification-count`)
     .then(response => {
       setUnreadNotificationsCount(response.data.unreadCount); // Set the unread count from the server
     })
