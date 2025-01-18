@@ -398,9 +398,6 @@ app.post("/login", async (req, res) => {
             httpOnly: true,
             secure: true, // Enable for HTTPS
             sameSite: "None", // Required for cross-origin
-            domain: ".vercel.app", // Match your frontend domain
-            maxAge: 24 * 60 * 60 * 1000, // 24 hours
-            path: "/",
           });
 
           return res.json({
