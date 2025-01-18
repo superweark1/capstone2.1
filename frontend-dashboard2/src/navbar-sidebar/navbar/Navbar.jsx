@@ -74,20 +74,33 @@ const Navbar = () => {
 
   const handleLogout = () => {
     axios
-      .post('http://localhost:5001/logout', {}, { withCredentials: true }) // Assuming you have a logout route
+      .post(`${process.env.REACT_APP_API_URL}/logout`, {}, { withCredentials: true }) // Sending credentials (cookies)
       .then((response) => {
         if (response.status === 200) {
           console.log('Logged out successfully');
-          navigate('/'); 
+          navigate('/'); // Redirect to the homepage or login page
         } else {
-          alert('Failed to log out');
+          console.error('Unexpected response status during logout:', response.status);
+          alert('Failed to log out. Please try again.');
         }
       })
       .catch((error) => {
-        console.error('Error during logout:', error);
-        alert('An error occurred during logout.');
+        if (error.response) {
+          // The request was made and the server responded with a status code outside of the 2xx range
+          console.error('Logout error response:', error.response.data);
+          alert(`Logout failed: ${error.response.data.message || 'An error occurred.'}`);
+        } else if (error.request) {
+          // The request was made but no response was received
+          console.error('Logout request error:', error.request);
+          alert('No response received from the server. Please check your connection.');
+        } else {
+          // Something else happened in setting up the request
+          console.error('Error during logout:', error.message);
+          alert('An unexpected error occurred. Please try again.');
+        }
       });
   };
+  
 
 
 useEffect(() => {
